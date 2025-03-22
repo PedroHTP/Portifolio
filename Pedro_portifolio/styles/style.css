@@ -1,0 +1,186 @@
+@font-face {
+    font-family: 'Thesignature';
+    src: url("../fonts/thesignature/Thesignature.ttf");
+    font-weight: 400;
+}    
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.fontAss {
+    font-family: 'Thesignature', sans-serif;
+    font-size: 3em;
+    width: 100%;
+    justify-content: center;
+    margin-top: 2%;
+    border-bottom: 2px solid black;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-space {
+    justify-content: space-around;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.justify-end {
+    width: 100%;
+    justify-content: end;
+}
+
+header {
+    display: flex;
+    color: antiquewhite;
+    background-color: black;
+    align-items: center;
+    justify-content: start;
+    padding: 1em 1em 1em 2em;
+    gap: 1em;
+    margin: 1%;
+    border-radius: 100px;
+
+    #logo {
+        border-radius: 50px;
+    }
+
+    h1 {
+        font-size: 2em;
+        margin: 0;
+    }
+
+    ul {
+        display: flex;
+        list-style-type: none;
+        padding: 0.5%;
+        margin: 0;
+        li {
+            margin: 0 1em;
+            a {
+                text-decoration: none;
+                color: whitesmoke;
+                border-right: 1px solid whitesmoke;
+                padding: 20%;
+                &:hover {
+                    color: rgb(209, 208, 208);
+                }
+            }
+        }
+    }
+
+    .pesquisa {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: 1em;
+        
+        input {
+            border-radius: 10px;
+            border-start-end-radius: 0;
+            border-end-end-radius: 0;
+            padding: 0.5em 1em;
+            border: none;
+        }
+
+        button {
+            background-color: blue;
+            border-radius: 10px;
+            border-end-start-radius: 0;
+            border-start-start-radius: 0;
+            padding: 0.7em 0.8em 0.8em 0.8em;
+            display: flex;
+            align-items: center;
+            color: whitesmoke;
+            border: none;
+            &:hover {
+                background-color: rgb(0, 0, 202);
+            }
+        }
+    }
+
+    .login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        padding: 0.5em 1em;
+        a {
+            text-decoration: none;
+            color: whitesmoke;
+            &:hover {
+                color: rgb(209, 208, 208);
+            }
+        }
+        #registrar {
+            background-color: blue;
+            border-radius: 10px;
+            padding: 0.5em 1em;
+            color: whitesmoke;
+            &:hover {
+                background-color: darkblue;
+            }
+        }
+    }
+}
+
+main {
+    display: flex;
+    background-color: aqua;
+    section {
+        background-color: green;
+        display: flex;
+        justify-self: center;
+        flex: 3;
+        margin: 1em;
+        padding: 1em;
+    }
+    aside {
+        flex: 3;
+        padding: 1em;
+    }
+}
+aside {
+    background-color: yellow;
+}
+footer {
+    background-color: gainsboro;
+}
+
+.redes {
+    margin-top: 1%;
+    justify-self: center;
+    width: 12%;
+}
+
+.logoRedes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 2.5em;
+        height: 2.5em;
+    }
+}
+
+.condicoes {
+    justify-content: center;
+    gap: 1%;
+    padding-top: 1%;
+    width: 100%;
+    color: gray;
+    div {
+        width: fit-content;
+    }
+}
