@@ -19,7 +19,7 @@ body {
     justify-content: center;
     border-bottom: 2px solid black;
     p {
-        margin: 2% 2% 2% 2%;
+        margin: 1% 1% 1% 1%;
     }
     :after {
         content: "";
@@ -180,8 +180,18 @@ header {
     }
 }
 
+.fit-content {
+    width: fit-content;
+}
+
+.bio {
+    width: 70%;
+    text-align: justify;
+}
+
 main {
     display: flex;
+    width: fit-content;
     background-color: rgb(138, 152, 152);
     section {
         background-color: rgb(122, 144, 122);
@@ -191,6 +201,7 @@ main {
         margin: 1em;
         padding: 1em;
     }
+    
     aside {
         flex: 3;
         padding: 1em;
