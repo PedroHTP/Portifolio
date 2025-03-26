@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portifolio</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="shortcut icon" href="./img/favicon_io/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: rgb(31, 30, 30);
+        }
+    </style>
 </head>
 <body>
     <?php 
@@ -20,8 +25,8 @@
             <h1>Portifolio</h1>
         </div>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Sobre</a></li>
+            <li><a href="<?=$_SERVER['PHP_SELF']?>">Home</a></li>
+            <li><a href="./subpages/biografia.php">Sobre</a></li>
             <li><a href="#">Contato</a></li>
         </ul>
         <div class="flex justify-end ">
@@ -57,17 +62,17 @@
        <div>
         <div class="flex justify-space redes">
             <div class="logoRedes">
-                <a href="#">
+                <a href="https://www.instagram.com/pedro_htp015/">
                     <img src="./icons/icons8-instagram.svg" alt="Icone do instagram">
                 </a>
             </div>
             <div class="logoRedes">
-                <a href="#">
+                <a href="https://github.com/PedroHTP">
                     <img src="./icons/icons8-github.svg" alt="Icone do Github">
                 </a>
             </div>
             <div class="logoRedes">
-                <a href="#">
+                <a href="https://x.com/bluefrosthtp">
                     <img src="./icons/icons8-logo-discord.svg" alt="Icone do Discord">
                 </a>
             </div>
