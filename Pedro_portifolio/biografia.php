@@ -1,60 +1,33 @@
 <?php 
-    $title = 'Home';
+    $title = 'Biografia';
     include_once ('./models/head.php');
-
-    // sessão
-    session_start();
     
-    if (!isset($_SESSION['logado'])) {
-        echo "<script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    var modal = new bootstrap.Modal(document.getElementById('reg_modal'));
-                    modal.show();
-                });
-              </script>";
-    }
-
 ?>
-    
-<head>
-    <link rel="stylesheet" href="./styles/style.css">
-</head>
+
 <body>
-
-<!-- Modal -->
-<div class="modal fade" id="reg_modal" tabindex="-1" role="dialog" aria-labelledby="reg_modalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content modal_style">
-      <div class="modal-header">
-        <h5 class="modal-title" id="reg_modalLabel">Você não está Registrado!</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Deseja fazer registro?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="Logar()">Fazer Login</button>
-      </div>
-    </div>
-  </div>
-</div>
-
+    
     <?php 
     require_once('./models/header.php')
     ?>
-    
+
     <main>
-        <div>
-            <section>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, at ipsum molestiae necessitatibus aliquam dolorem officia vero beatae, blanditiis numquam vel sequi eius rerum possimus suscipit iste magni. Debitis, magni?
+        <div class="flex biografia">
+            <section class="bio column">
+                <div>
+                    <p>
+                    Pedro Henrique Teixeira Pião nasceu na cidade Guanambi, no dia 20 de maio de 2007, seu pai nasceu em Brumado e sua mãe na região rural de Caetité, nos primeiros anos de sua vida ele cresceu na casa de sua avó, época na qual ganhou de aniversário um leitor de dvd e uma caixa cheia de dvds que o fez desenvolver seus primeiros interesses e hobbies, posteriormente teve a oportunidade de acessar um notebook pela primeira vez, dispositivo do seu pai, algum tempo depois ganhou o sua própria máquina, junto com ela, ele se apaixonou pelo mundo da tecnologia, muitas vezes influenciado pelos seus familiares, Pedro viu na informática um caminho para trabalhar no futuro.
+                    </p>
+                    <p>
+                    Na escola, ele gostava de todas as matérias que envolviam a lógica, principalmente matemática e física. Sempre pensando alto, ele sonhava em ser piloto de avião, mas decidiu seguir uma carreira mais promissora, e já que sempre foi o "TI" da sala em suas escolas decidiu entrar no curso de informática no IF, institução em que outros dos seus parentes já tinha estudado, nela se aprofundou na informática, ganhando conhecimentos tanto em hardware tanto em software, e foi introduzido nas suas primeira linguagens de programação com C, PHP e Javascript, assim como ferramentas como MySQL, Node.js, Figma e Visual Studio Code.
+                    </p>
+                </div>
             </section>
         </div>
         <aside>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum laboriosam blanditiis optio cum. Asperiores aliquid odio consequuntur voluptatibus porro itaque quae dolorum minus repellendus perferendis maiores consequatur accusamus, sequi vero?
         </aside>
     </main>
-    
+
     <footer class="flex justify-between column">
        <div class="flex fontAss">
             <p>

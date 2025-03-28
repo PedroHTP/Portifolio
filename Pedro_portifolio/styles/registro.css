@@ -1,0 +1,10 @@
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container_form {
+    width: 60%;
+    background-color: aqua;
+}
