@@ -6,7 +6,7 @@
 
 <body>
     
-    <?php 
+    <?php
     require_once('./models/header.php')
     ?>
 

@@ -5,16 +5,25 @@
     // sessão
     session_start();
     
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $_SESSION['logado'] = true;
+    }
+
     if (!isset($_SESSION['logado'])) {
-        echo "<script>
+            echo "<script>
                 document.addEventListener('DOMContentLoaded', function() {
                     var modal = new bootstrap.Modal(document.getElementById('reg_modal'));
                     modal.show();
                 });
               </script>";
+    } else {
+           
     }
-
 ?>
+
+<script>
+    Perfil
+</script>
     
 <head>
     <link rel="stylesheet" href="./styles/style.css">
@@ -94,7 +103,7 @@
         </div>
        </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></scrip>
     <script src="./scripts/script.js"></script>
 </body>
 </html>
