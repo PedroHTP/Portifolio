@@ -5,9 +5,11 @@
     // sessão
     session_start();
 
-    if (($_SESSION['logado'])) {
-        header('Location: ./index.php');
-        exit;
+    if (isset($_SESSION['logado'])) {
+        if ($_SESSION['logado'] == true) {
+            header('Location: ./index.php');
+            exit;
+        }
     }
 ?>
 
@@ -39,11 +41,11 @@
                         </div>
                         <div class="div_input">
                             <div>Senha:</div>
-                            <input type="password" name="senha" id="senha" placeholder="batataarrozpeixe123" required oninput="formDeCadastro.AtualizaDados()">
+                            <input type="password" name="senha" id="senha" placeholder="batataarrozpeixe123" required oninput="formDeCadastro.AtualizaDados()" minlength="6">
                         </div>
                         <div class="div_input">
                             <div>Confirme a senha:</div>
-                            <input type="password" name="confirmaSenha" id="confirmaSenha" placeholder="batataarrozpeixe123" required oninput="formDeCadastro.AtualizaDados()">
+                            <input type="password" name="confirmaSenha" id="confirmaSenha" placeholder="batataarrozpeixe123" required oninput="formDeCadastro.AtualizaDados()" minlength="6">
                         </div>
                     
                     

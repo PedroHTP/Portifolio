@@ -36,7 +36,7 @@ class Cadastro {
     ConfereData() {
         let idade = this.CalcularIdade().anos;
 
-        if ((idade <= 7) || (idade > 100)) {
+        if ((idade <= 13) || (idade > 100)) {
             return false;
         } else {
             return true;

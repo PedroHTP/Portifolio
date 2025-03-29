@@ -3,7 +3,7 @@ function Logar() {
 }
 
    class Conta {
-    constructor(parameters) {
+    constructor() {
         
     }
    }
