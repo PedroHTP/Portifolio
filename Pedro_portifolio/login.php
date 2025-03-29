@@ -11,6 +11,7 @@
             exit;
         }
     }
+  
 ?>
 
 <head>
@@ -24,7 +25,16 @@
                 <div>
                     <h1>Cadastro</h1>
                 </div>
-                <div class="form_area">
+                <div class="erros">
+                    <?php 
+                        if (isset($_SESSION['erros'])) {
+                            foreach ($erros as $tipo => $mensagem) {
+                                echo "Erro de $tipo: $mensagem";
+                            }
+                        }
+                    ?>
+                </div>
+                    <div class="form_area">
                         <div class="flex" style="width: 100%; gap: 5%;">
                             <div class="div_input">
                                 <div>Nome de usuário:</div>

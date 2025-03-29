@@ -39,5 +39,9 @@ main {
         .finalizar {
             margin-top: 7%;
         }
+
+        .erros {
+            color: rgb(146, 0, 0);
+        }
     }
 }

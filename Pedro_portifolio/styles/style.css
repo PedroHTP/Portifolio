@@ -40,6 +40,11 @@ body {
     display: flex;
 }
 
+.disabled {
+    display: none;
+    
+}
+
 .justify-between {
     justify-content: space-between;
 }
@@ -69,8 +74,16 @@ header {
     margin: 1%;
     border-radius: 100px;
 
-    #logo {
-        border-radius: 50px;
+    .logo {
+        width: 5%;
+
+        #logo {
+            border-radius: 50px;
+        }
+    }
+
+    .header_title {
+        width: 10%;
     }
 
     h1 {
@@ -79,6 +92,7 @@ header {
     }
 
     ul {
+        width: 20%;
         display: flex;
         list-style-type: none;
         padding: 0.5%;
@@ -146,27 +160,30 @@ header {
             }
         }
     }
+    .right_side {
+        width: 65%;
 
-    .login {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1em;
-        padding: 0.5em 1em;
-        a {
-            text-decoration: none;
-            color: whitesmoke;
-            &:hover {
-                color: rgb(209, 208, 208);
-            }
-        }
-        #registrar {
-            background-color: blue;
-            border-radius: 10px;
+        .login, .conta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1em;
             padding: 0.5em 1em;
-            color: whitesmoke;
-            &:hover {
-                background-color: darkblue;
+            a {
+                text-decoration: none;
+                color: whitesmoke;
+                &:hover {
+                    color: rgb(209, 208, 208);
+                }
+            }
+            #registrar {
+                background-color: blue;
+                border-radius: 10px;
+                padding: 0.5em 1em;
+                color: whitesmoke;
+                &:hover {
+                    background-color: darkblue;
+                }
             }
         }
     }
