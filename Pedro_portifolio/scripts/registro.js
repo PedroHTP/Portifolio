@@ -5,7 +5,7 @@ class Botao {
     }
 
     Aparecer() {
-        this.elemento.setAttribute('disabled', false)
+        this.elemento.removeAttribute('disabled')
     }
     Desaparecer() {
         this.elemento.setAttribute('disabled', true)

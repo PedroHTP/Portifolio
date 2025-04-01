@@ -1,3 +1,21 @@
+<?php 
+    echo "<script>
+            let logado = false;
+        </script>";
+    if (isset($_SESSION['logado'])) {
+        if ($_SESSION['logado'] == true) {
+            echo "<script>
+                logado = true;
+            </script>";
+            echo "<script>
+                
+                  </script>";
+        }
+    } 
+?>
+
+
+
 <header>
     <div class="logo">
         <img src="./img/favicon_io/favicon-32x32.png" alt="" id="logo">
@@ -8,19 +26,25 @@
     <ul>
         <li><a href="./index.php">Home</a></li>
         <li><a href="./biografia.php">Sobre</a></li>
-        <li><a href="#">Contato</a></li>
+        <li><a href="./projetos.php">Projetos</a></li>
+        <li><a href="./galeria.php">Galeria</a></li>
     </ul>
     <div class="flex justify-end right_side">
         <div class="pesquisa">
             <input type="text" placeholder="Pesquisar">
             <button><img src="./icons/search.svg" alt=""></button>
         </div>
-        <div class="login">
+
+        <div class="login" hidden>
             <a href="#" class="link">Login</a>
             <a href="./login.php" class="link" id="registrar">Cadastrar</a>
         </div>
-        <div class="conta" hidden>
-            
+        
+        <div class="perfil" id="perfil" hidden>
+            <div><img src="./img/favicon_io/favicon.ico" alt=""></div>
+            <div id="usuario">
+
+            </div>
         </div>
     </div>
 </header>

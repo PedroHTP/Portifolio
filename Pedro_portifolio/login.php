@@ -28,6 +28,7 @@
                 <div class="erros">
                     <?php 
                         if (isset($_SESSION['erros'])) {
+                            $erros = $_SESSION['erros'];
                             foreach ($erros as $tipo => $mensagem) {
                                 echo "Erro de $tipo: $mensagem";
                             }
