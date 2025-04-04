@@ -14,13 +14,13 @@
 <?php
 
     if (!isset($_SESSION['logado'])) {
-            echo "
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    var modal = new bootstrap.Modal(document.getElementById('reg_modal'));
-                    modal.show();
-                });
-            </script>";
+    echo "
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var modal = new bootstrap.Modal(document.getElementById('reg_modal'));
+                modal.show();
+            });
+        </script>";
     }
     
 ?>

@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     divLogin.hidden = false;
     
-        if (logado == true) {
-            divLogin.hidden = true;
-            divPerfil.hidden = false;
-        }
+    if (logado == true) {
+        divLogin.hidden = true;
+        divPerfil.hidden = false;
+    }
 });

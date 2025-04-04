@@ -33,8 +33,8 @@
             Política de Privacidade
         </div>
     </div>
-    <div class="flex condicoes">
-        <p>Copyright &copy; 2025 Pedro Henrique Teixeira Pião. Todos os direitos reservados.</p>
-    </div>
+        <div class="flex condicoes">
+            <p>Copyright &copy; 2025 Pedro Henrique Teixeira Pião. Todos os direitos reservados.</p>
+        </div>
     </div>
 </footer>

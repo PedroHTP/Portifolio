@@ -7,9 +7,6 @@
             echo "<script>
                 logado = true;
             </script>";
-            echo "<script>
-                
-                  </script>";
         }
     } 
 ?>
@@ -40,10 +37,10 @@
             <a href="./login.php" class="link" id="registrar">Cadastrar</a>
         </div>
         
-        <div class="perfil" id="perfil" hidden>
-            <div><img src="./img/favicon_io/favicon.ico" alt=""></div>
+        <div class="perfil flex" id="perfil" hidden>
+            <div><img src="./img/user.png" alt=""></div>
             <div id="usuario">
-
+                <a href="./perfil.php"><?=$_SESSION['dados']['usuario']?></a>
             </div>
         </div>
     </div>
