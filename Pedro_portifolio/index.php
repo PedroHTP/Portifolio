@@ -14,13 +14,14 @@
 <?php
 
     if (!isset($_SESSION['logado'])) {
-    echo "
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var modal = new bootstrap.Modal(document.getElementById('reg_modal'));
-                modal.show();
-            });
-        </script>";
+    echo 
+    "
+      <script>
+          document.addEventListener('DOMContentLoaded', function() {
+              var modal = new bootstrap.Modal(document.getElementById('reg_modal'));
+              modal.show();
+          });
+      </script>";
     }
     
 ?>
@@ -67,6 +68,8 @@
     <?php 
     require_once('./models/footer.php')
     ?>
+
+    <button onclick="resetar()">Resetar sessão</button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="./scripts/script.js"></script>

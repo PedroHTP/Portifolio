@@ -46,7 +46,7 @@
             }
 
             // erros
-                if (!empty($erros)) {
+                if (empty($erros)) {
 
                     $_SESSION['erros'] = $erros;
                     $_SESSION['logado'] = false;
@@ -55,7 +55,8 @@
                         exit;
                 } else {
                     $_SESSION['logado'] = true;
-                    $_SESSION['dados'] = array('usuario'=>$nomeUsuario, 'email'=>$email, 'senha'=>$senha, 'idade'=>$idade);
+                    $_SESSION['dados'] = array('usuario'=>$nomeUsuario, 'email'=>$email, 'senha'=>$senha, 'idade'=>$idade, 'nascimento'=>array('ano'=>$aniversario->format('Y'), 'mes'=>$aniversario->format('m'), 'dia'=>$aniversario->format('d')));
                 }
     }
+    
 ?>
