@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    width: 90%;
+}
+
+#area-table {
+    margin: 1%;
+
+    justify-content: center;
+        table {
+            width: 99%;
+            border-collapse: collapse;
+            #topo{
+                background-color: gray;
+            }
+            th { 
+                text-align: left;
+            }
+        }
+}
+
+.button {
+    margin: 0.5%;
+}

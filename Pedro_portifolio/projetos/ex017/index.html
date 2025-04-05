@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Tabuada</h1>
+    </header>
+
+    <section>
+        <div>
+            <label for="num">Número:</label>
+            <input type="number" name="num" id="num">
+        </div>
+        <div>
+            <label for="limit">Limite da tabuada:</label>
+            <input type="number" name="limit" id="limit">
+        </div>
+        <div>
+            <input type="button" value="Gerar Tabuada" id="exe" onclick="calcular()">
+        </div>
+            <h2 id="title_tab"></h2>
+        <div>
+            <select title="tabuada" name="tab" id="tab" size="16" placeholder="Digite um número acima.">
+                
+            </select>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; CursoemVídeo</p>
+    </footer>
+    <script src="./script/script.js"></script>
+</body>
+</html>
