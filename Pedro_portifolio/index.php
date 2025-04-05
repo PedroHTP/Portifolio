@@ -14,14 +14,17 @@
 <?php
 
     if (!isset($_SESSION['logado'])) {
-    echo 
-    "
-      <script>
-          document.addEventListener('DOMContentLoaded', function() {
-              var modal = new bootstrap.Modal(document.getElementById('reg_modal'));
-              modal.show();
-          });
-      </script>";
+      if (!isset($_SESSION['mensagem'])) {
+        $_SESSION['mensagem'] = true;
+        echo 
+        "
+          <script>
+              document.addEventListener('DOMContentLoaded', function() {
+                  var modal = new bootstrap.Modal(document.getElementById('reg_modal'));
+                  modal.show();
+              });
+          </script>";
+      }
     }
     
 ?>
@@ -43,7 +46,7 @@
         Deseja fazer registro?
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Talvez mais tarde</button>
         <button type="button" class="btn btn-primary" onclick="Logar()">Fazer Login</button>
       </div>
     </div>

@@ -1,5 +1,7 @@
 <?php 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        echo "<script>alert('post');</script>";
+
         // obtendo os dados
         $nomeUsuario = trim($_POST['usuario'] ?? '');
         $email = trim($_POST['email'] ?? '');
@@ -10,13 +12,15 @@
         // filtro de dados
             //Nome de usuário
             $nomeUsuario = strip_tags($nomeUsuario); // Tira as HTML
-            $nomeUsuario = preg_replace('/[^\w]/', '', $nomeUsuario); // Permite apenas letras, números e _
+            $nomeUsuario = preg_replace('/[^\w]/', '', $nomeUsuario); // Permite apenas letras, números e _ (tira espaços e caracteres especiais)
 
             if (empty($nomeUsuario)) {
                 $erros['nome de usuário'] = "Nome de usuário obrigatório.";
-            } else if (strlen($nomeUsuario) < 6) {
+            } else if (strlen($nomeUsuario) < 6 ) {
                 $erros['nome de usuário'] = "Mínimo 6 caracteres.";
-            }
+            } else if (strlen($nomeUsuario) > 15 ) {
+                $erros['nome de usuário'] = "Máximo 15 caracteres.";
+            } 
 
             // E-mail
             $email = filter_var($email, FILTER_SANITIZE_EMAIL); // Remove caracteres inválidos
@@ -46,17 +50,20 @@
             }
 
             // erros
-                if (empty($erros)) {
+                if (!empty($erros)) {
 
                     $_SESSION['erros'] = $erros;
                     $_SESSION['logado'] = false;
 
-                    header('Location: ./login.php');
-                        exit;
+                    echo "<script>alert('erros');</script>";
+                    echo "<script>window.history.back();</script>";
                 } else {
                     $_SESSION['logado'] = true;
-                    $_SESSION['dados'] = array('usuario'=>$nomeUsuario, 'email'=>$email, 'senha'=>$senha, 'idade'=>$idade, 'nascimento'=>array('ano'=>$aniversario->format('Y'), 'mes'=>$aniversario->format('m'), 'dia'=>$aniversario->format('d')));
+                    echo "<script>alert('true');</script>";
+                    $_SESSION['dados'] = array('usuario'=>$nomeUsuario, 'email'=>$email, 'senha'=>$senha, 'idade'=>$idade, 'nascimento'=>array('total' => $aniversario->format('Y-m-d'), 'ano'=>$aniversario->format('Y'), 'mes'=>$aniversario->format('m'), 'dia'=>$aniversario->format('d')));
                 }
+                echo "<script>alert(".$_SESSION['dados']['usuario'].");</script>";
+
+                
     }
-    
 ?>

@@ -52,25 +52,30 @@
                         </div>
                         <div class="div_input">
                             <div>Senha:</div>
-                            <input type="password" name="senha" id="senha" placeholder="batataarrozpeixe123" required oninput="formDeCadastro.AtualizaDados()" minlength="6">
+                            <input type="password" name="senha" id="senha" placeholder="batataarrozpeixe123" required oninput="formDeCadastro.AtualizaDados()" minlength="6" maxlength="15">
                         </div>
                         <div class="div_input">
                             <div>Confirme a senha:</div>
-                            <input type="password" name="confirmaSenha" id="confirmaSenha" placeholder="batataarrozpeixe123" required oninput="formDeCadastro.AtualizaDados()" minlength="6">
+                            <input type="password" name="confirmaSenha" id="confirmaSenha" placeholder="batataarrozpeixe123" required oninput="formDeCadastro.AtualizaDados()" minlength="6" maxlength="15">
                         </div>
-                    
                     
                         <div class="finalizar">
-                            <input type="submit" value="Cadastrar" id="submit" disabled>
-                            <input type="reset" value="Resetar">
+                            <div>
+                                <input type="submit" value="Cadastrar" id="submit" disabled>
+                                <input type="reset" value="Resetar">
+                            </div>
+                            <div class="container_voltar">
+                                <input type="button" value="Voltar" onclick="Voltar()"></input>
+                            </div>
                         </div>
-                </div>
-
-            </form>
-        </div>
-    </main>
+                    </div>
+                    
+                </form>
+            </div>
+        </main>
 
     <!-- JavasScript -->
     <script src="./scripts/registro.js"></script>
+    <script src="./scripts/script.js"></script>
 </body>
 </html>

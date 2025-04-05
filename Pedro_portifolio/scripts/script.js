@@ -6,6 +6,10 @@ function resetar() {
     document.location.href = './resetar.php';
 }
 
+function Voltar() {
+    window.history.back();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     let divLogin = document.querySelector('div.login');
     let divPerfil = document.querySelector('div.perfil');

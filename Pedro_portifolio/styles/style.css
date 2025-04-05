@@ -148,7 +148,9 @@ header {
             border-end-start-radius: 0;
             border-start-start-radius: 0;
             padding: 0.6em 0.6em 0.6em 0.6em;
-            
+            height: 90%;
+            pointer-events: all;
+
             display: flex;
             align-items: center;
             color: whitesmoke;
@@ -187,6 +189,7 @@ header {
     }
 
     .perfil {
+        cursor: pointer;
         align-items: center;
         gap: 5%;
         a {

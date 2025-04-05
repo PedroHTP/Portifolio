@@ -18,6 +18,8 @@ class Cadastro {
 
     AtualizaDados() {
         this.nome = document.querySelector('#usuario').value
+        this.nomecorrigido = this.nome.charAt(0).toUpperCase() + this.nome.slice(1)
+        document.querySelector('#usuario').value = this.nomecorrigido
         this.aniversario = document.querySelector('#nascimento').value
         this.email = document.querySelector('#email').value
         this.senha1 = document.querySelector('#senha').value

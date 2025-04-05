@@ -8,9 +8,56 @@
     }
 
     $title = 'Perfil';
-    include_once ('./models/head.php'); 
-    var_dump($_SESSION['dados']);
+    include_once ('./models/head.php');
+
+    switch ($_SESSION['dados']['nascimento']['mes']) {
+        case "01":
+            $mes = "Janeiro";
+        break;
+        case "02":
+            $mes = "Fevereiro"; 
+        break;
+        case "03":
+            $mes = "Março";
+            break;
+        case "04":
+            $mes = "Abril";
+            break;
+        case "05":
+            $mes = "Maio";
+            break;
+        case "06":
+            $mes = "Junho";
+            break;
+        case "07":
+            $mes = "Julho";
+            break;
+        case "08":
+            $mes = "Agosto";
+            break;
+        case "09":
+            $mes = "Setembro";
+            break;
+        case "10":
+            $mes = "Outubro";
+            break;
+        case "11":
+            $mes = "Novembro";
+            break;
+        case "12":  
+            $mes = "Dezembro";
+            break;
+    
+        default:
+            break;
+    }
 ?>
+
+<script>
+    let textmes = document.querySelector('span#mes');
+    let mes;
+    
+</script>
 
 <head>
     <link rel="stylesheet" href="./styles/perfil.css">
@@ -32,7 +79,7 @@
                         </div>
                         <div class="div_input">
                             <div>Idade: <?=$_SESSION['dados']['idade']?></div>
-                            <div>Data de aniversário: <?=$_SESSION['dados']['nascimento']['dia'].' de '.$_SESSION['dados']['nascimento']['mes'].' de '.$_SESSION['dados']['nascimento']['ano']?></div>
+                            <div>Data de aniversário: <?=$_SESSION['dados']['nascimento']['dia']." de ".$mes." de ".$_SESSION['dados']['nascimento']['ano']?></div>
                         </div>
                     
                     <div class="div_input">
@@ -42,7 +89,7 @@
             </div>
             <div class="container_botoes flex">
                 <button class="btn btn-primary" id="editar" onclick="Editar()">Editar</button>
-                <button class="btn btn-danger" id="sair" onclick="Sair()">Sair</button>
+                <button class="btn btn-danger" id="sair" onclick="Voltar()">Voltar</button>
             </div>
         </section>
     </main>
@@ -51,8 +98,6 @@
             window.location.href = './editar.php';
         }
 
-        function Sair() {
-            window.history.back();
-        }
     </script>
+    <script src="./scripts/script.js"></script>
 </body>

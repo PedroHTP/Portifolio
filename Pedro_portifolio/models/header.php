@@ -3,7 +3,7 @@
             let logado = false;
         </script>";
     if (isset($_SESSION['logado'])) {
-        if ($_SESSION['logado'] == true) {
+        if ($_SESSION['logado'] === true) {
             echo "<script>
                 logado = true;
             </script>";
@@ -37,10 +37,10 @@
             <a href="./login.php" class="link" id="registrar">Cadastrar</a>
         </div>
         
-        <div class="perfil flex" id="perfil" hidden>
+        <div class="perfil flex" id="perfil" hidden onclick="window.location.href='./perfil.php'">
             <div><img src="./img/user.png" alt=""></div>
             <div id="usuario">
-                <a href="./perfil.php"><?=$_SESSION['dados']['usuario']?></a>
+                <a ><?=$_SESSION['dados']['usuario'] ?? ''?></a>
             </div>
         </div>
     </div>
