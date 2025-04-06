@@ -20,7 +20,7 @@
         </div>
         <div class="logoRedes">
             <a href="https://x.com/bluefrosthtp">
-                <img src="./icons/icons8-logo-discord.svg" alt="Icone do Discord">
+                <img src="./icons/icons8-x.svg" alt="Icone do Discord">
             </a>
         </div>
     </div>
