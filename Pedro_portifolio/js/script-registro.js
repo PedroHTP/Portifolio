@@ -175,14 +175,7 @@ function checkPasswordConfirm() {
   }
 }
 
-// Checkbox
-regCheck.addEventListener("click", () => {
-  if (regCheck.checked === true) {
-    regButton.disabled = false;
-  } else {
-    regButton.disabled = true;
-  }
-});
+
 
 // Salvar Data
 function saveData() {

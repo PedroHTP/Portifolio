@@ -43,6 +43,8 @@ if (isset($_SESSION['logado'])) {
                   class="input"
                   placeholder=" "
                   maxlength="15"
+                  minlength="6"
+                  oninput="formDeCadastro.AtualizaDados()"
                 />
                 <label for="username" class="input-label">Nome de Usuário</label>
               </div>
@@ -53,7 +55,14 @@ if (isset($_SESSION['logado'])) {
             </div>
             <div class="email-input">
               <div class="input-box">
-                <input type="text" name="email" id="email" class="input" placeholder=" " />
+                <input 
+                type="text" 
+                name="email" 
+                id="email" 
+                class="input" 
+                placeholder=" " 
+                oninput="formDeCadastro.AtualizaDados()"
+                />
                 <label for="email" class="input-label">Email</label>
               </div>
               <span>
@@ -69,6 +78,7 @@ if (isset($_SESSION['logado'])) {
                   id="reg_password"
                   class="input"
                   placeholder=" "
+                  oninput="formDeCadastro.AtualizaDados()"
                 />
                 <label for="reg_password" class="input-label">Senha</label>
               </div>
@@ -84,6 +94,7 @@ if (isset($_SESSION['logado'])) {
                   id="conreg_password"
                   class="input"
                   placeholder=" "
+                  oninput="formDeCadastro.AtualizaDados()"
                 />
                 <label for="conreg_password" class="input-label"
                   >Confirme sua Senha</label
@@ -105,6 +116,7 @@ if (isset($_SESSION['logado'])) {
                   id="birth_date"
                   class="input"
                   placeholder=" "
+                  oninput="formDeCadastro.AtualizaDados()"
                 />
                 <label for="birth_date" class="input-label">Data de Nascimento</label>
               </div>
@@ -123,7 +135,7 @@ if (isset($_SESSION['logado'])) {
           </div>
           
           <div class="check-element">
-            <input type="checkbox" name="reg-check" id="reg_check" />
+            <input type="checkbox" name="reg-check" id="reg_check" oninput="formDeCadastro.AtualizaDados()"/>
             <label for="reg_check"
               >Esta conta só pode ser usada neste dispositivo.</label
             >
@@ -139,7 +151,8 @@ if (isset($_SESSION['logado'])) {
     <script src="./js/script-registro.js"></script>
 
     <?php 
-      session_unset();
+      $_SESSION['erros'] = null; // Limpa os erros após exibi-los
+      $_SESSION['logado'] = null; // Limpa a variável de logado após redirecionar
     ?>
   </body>
 </html>

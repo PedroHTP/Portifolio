@@ -24,11 +24,14 @@ class Cadastro {
         this.email = document.querySelector('#email').value
         this.senha1 = document.querySelector('#reg_password').value
         this.senha2 = document.querySelector('#conreg_password').value
+        this.regCheck = document.querySelector('#reg_check')
         this.ConferirRequisitos();
     }
 
+    
+
     ConferirRequisitos() {
-        if ((this.ConfereData()) && (this.ConfereSenha())) {
+        if ((this.ConfereData()) && (this.ConfereSenha()) && (this.regCheck.checked)) {
             submit.Aparecer();
         } else {
             submit.Desaparecer();
