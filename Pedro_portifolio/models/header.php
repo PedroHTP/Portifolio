@@ -56,7 +56,7 @@
     <div class="flex justify-end right_side">
   
           <div class="login" hidden>
-              <a href="./login.php" class="link" id="registrar">Cadastrar</a>
+              <a href="./registro.php" class="link" id="registrar">Cadastrar</a>
           </div>
           
           <div class="flex perfil" id="perfil" hidden onclick="window.location.href='./perfil.php'">
