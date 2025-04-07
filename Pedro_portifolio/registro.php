@@ -1,5 +1,8 @@
 <?php 
-session_start();
+// sessão
+  session_start();
+
+
 if (isset($_SESSION['logado'])) {
     if ($_SESSION['logado'] === true) {
         header("Location: ./index.php");
@@ -7,6 +10,7 @@ if (isset($_SESSION['logado'])) {
     }
 }
 
+  $title = "Registro";
   include_once ("./models/head-registro.php");
 
 ?>
@@ -27,17 +31,18 @@ if (isset($_SESSION['logado'])) {
 
       <!-- Fomulario de Registro-->
       <section class="signup-form">
-        <div class="card">
+        <form action="./index.php" method="post" class="card">
           <h1>Cadastre-se</h1>
           <div class="input-group">
             <div class="username-input">
               <div class="input-box">
                 <input
                   type="text"
+                  name="usuario"
                   id="username"
                   class="input"
                   placeholder=" "
-                  maxlength="25"
+                  maxlength="15"
                 />
                 <label for="username" class="input-label">Nome de Usuário</label>
               </div>
@@ -48,7 +53,7 @@ if (isset($_SESSION['logado'])) {
             </div>
             <div class="email-input">
               <div class="input-box">
-                <input type="text" id="email" class="input" placeholder=" " />
+                <input type="text" name="email" id="email" class="input" placeholder=" " />
                 <label for="email" class="input-label">Email</label>
               </div>
               <span>
@@ -60,6 +65,7 @@ if (isset($_SESSION['logado'])) {
               <div class="input-box">
                 <input
                   type="password"
+                  name="senha"
                   id="reg_password"
                   class="input"
                   placeholder=" "
@@ -88,21 +94,52 @@ if (isset($_SESSION['logado'])) {
                 <p class="error-text" id="conreg_password_error"></p>
               </span>
             </div>
+
+            <div class="date-input">
+              <div class="input-box">
+                <input
+                  type="date"
+                  name="nascimento"
+                  min="1900-01-01"
+                  max="<?=date('Y-m-d')?>"
+                  id="birth_date"
+                  class="input"
+                  placeholder=" "
+                />
+                <label for="birth_date" class="input-label">Data de Nascimento</label>
+              </div>
+
+              <div class="erros">
+                    <?php 
+                        if (isset($_SESSION['erros'])) {
+                            $erros = $_SESSION['erros'];
+                            foreach ($erros as $tipo => $mensagem) {
+                                echo "Erro de $tipo: $mensagem";
+                            }
+                        }
+                    ?>
+              </div>
+            </div>
           </div>
+          
           <div class="check-element">
             <input type="checkbox" name="reg-check" id="reg_check" />
             <label for="reg_check"
               >Esta conta só pode ser usada neste dispositivo.</label
             >
           </div>
-          <button type="submit" id="signup_submit" class="btn" disabled>
-            Cadastrar-se
-          </button>
-        </div>
+
+          <input type="submit" id="signup_submit" class="btn" value="Cadastrar-se" disabled></input>
+        </form>
       </section>
 
 
     <!-- Script JavaScript bem bacana -->
+    <script src="./js/registro.js"></script>
     <script src="./js/script-registro.js"></script>
+
+    <?php 
+      session_unset();
+    ?>
   </body>
 </html>

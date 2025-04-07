@@ -5,25 +5,25 @@ class Botao {
     }
 
     Aparecer() {
-        this.elemento.removeAttribute('disabled')
+        this.elemento.disabled = false;
     }
     Desaparecer() {
-        this.elemento.setAttribute('disabled', true)
+        this.elemento.disabled = true;
     }
 }
 
-    let submit = new Botao(document.getElementById('submit'))
+    let submit = new Botao(document.getElementById('signup_submit'))
     
 class Cadastro {
 
     AtualizaDados() {
-        this.nome = document.querySelector('#usuario').value
+        this.nome = document.querySelector('#username').value
         this.nomecorrigido = this.nome.charAt(0).toUpperCase() + this.nome.slice(1)
-        document.querySelector('#usuario').value = this.nomecorrigido
-        this.aniversario = document.querySelector('#nascimento').value
+        document.querySelector('#username').value = this.nomecorrigido
+        this.aniversario = document.querySelector('#birth_date').value
         this.email = document.querySelector('#email').value
-        this.senha1 = document.querySelector('#senha').value
-        this.senha2 = document.querySelector('#confirmaSenha').value
+        this.senha1 = document.querySelector('#reg_password').value
+        this.senha2 = document.querySelector('#conreg_password').value
         this.ConferirRequisitos();
     }
 

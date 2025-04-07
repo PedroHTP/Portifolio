@@ -77,5 +77,6 @@
     <!-- JavasScript -->
     <script src="./scripts/registro.js"></script>
     <script src="./scripts/script.js"></script>
+    
 </body>
 </html>
