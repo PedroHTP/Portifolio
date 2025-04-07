@@ -1,12 +1,9 @@
 <?php 
-    $title = 'Pedro\'s Portfolio';
-    include_once ('./models/head.php');
-
     // Sessão
     session_start();
-?>
-
-<?php 
+    $title = 'Pedro\'s Portfolio';
+    include_once ('./models/head.php');
+    
     // Dados
     include_once('.//models/dados.php');
 ?>

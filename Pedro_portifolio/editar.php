@@ -1,34 +1,130 @@
 <?php 
-    $title = 'Editando';
-    include_once ('./models/head.php'); 
+// sessão
+  session_start();
 
-    // sessão
-    session_start();
 
-    if (isset($_SESSION['logado'])) {
-        if ($_SESSION['logado'] === false) {
-            header('Location: ./index.php');
-            exit;
-        }
-    } else {
-        header('Location: ./index.php');
+if (isset($_SESSION['logado'])) {
+    if ($_SESSION['logado'] === false) {
+        header("Location: ./index.php");
         exit;
     }
-  
+}
+
+  $title = "Registro";
+  include_once ("./models/head-registro.php");
+
 ?>
 
-<head>
-    <link rel="stylesheet" href="./styles/registro.css">
-</head>
+  <body>
+    <div class="container">
+      <!-- Navbar -->
+      <nav>
+        <h1></h1>
+        <div class="link-group">
+          <a
+            id="github"
+            href="https://github.com/PedroHTP"
+            ><i class="ri-github-fill"></i
+          ></a>
+        </div>
+      </nav>
 
-<body>
-    <main>
-        <div class="container_form">
-            <form action="./index.php" method="post">
-                <div>
-                    <h1>Cadastro</h1>
-                </div>
-                <div class="erros">
+      <!-- Fomulario de Registro-->
+      <section class="signup-form">
+        <form action="./index.php" method="post" class="card">
+          <h1>Cadastre-se</h1>
+          <div class="input-group">
+            <div class="username-input">
+              <div class="input-box">
+                <input
+                  type="text"
+                  name="usuario"
+                  id="username"
+                  class="input"
+                  placeholder=" "
+                  maxlength="15"
+                  minlength="6"
+                  value="<?= $_SESSION['dados']['usuario'] ?? '' ?>"
+                  oninput="formDeCadastro.AtualizaDados()"
+                />
+                <label for="username" class="input-label">Novo Nome de Usuário</label>
+              </div>
+              <span>
+                <p class="mark">!</p>
+                <p class="error-text" id="username_error"></p>
+              </span>
+            </div>
+            <div class="email-input">
+              <div class="input-box">
+                <input 
+                type="text" 
+                name="email" 
+                id="email" 
+                class="input" 
+                placeholder=" " 
+                value="<?= $_SESSION['dados']['email'] ?? '' ?>"
+                oninput="formDeCadastro.AtualizaDados()"
+                />
+                <label for="email" class="input-label">Novo Email</label>
+              </div>
+              <span>
+                <p class="mark">!</p>
+                <p class="error-text" id="email_error"></p>
+              </span>
+            </div>
+            <div class="password-input">
+              <div class="input-box">
+                <input
+                  type="password"
+                  name="senha"
+                  id="reg_password"
+                  class="input"
+                  placeholder=" "
+                  oninput="formDeCadastro.AtualizaDados()"
+                />
+                <label for="reg_password" class="input-label">Nova Senha</label>
+              </div>
+              <span>
+                <p class="mark">!</p>
+                <p class="error-text" id="reg_password_error"></p>
+              </span>
+            </div>
+            <div class="password-input">
+              <div class="input-box">
+                <input
+                  type="password"
+                  id="conreg_password"
+                  class="input"
+                  placeholder=" "
+                  oninput="formDeCadastro.AtualizaDados()"
+                />
+                <label for="conreg_password" class="input-label"
+                  >Confirme a nova Senha</label
+                >
+              </div>
+              <span>
+                <p class="mark">!</p>
+                <p class="error-text" id="conreg_password_error"></p>
+              </span>
+            </div>
+
+            <div class="date-input">
+              <div class="input-box">
+                <input
+                  type="date"
+                  name="nascimento"
+                  value="<?= $_SESSION['dados']['nascimento']['total'] ?? '' ?>"
+                  min="1900-01-01"
+                  max="<?=date('Y-m-d')?>"
+                  id="birth_date"
+                  class="input"
+                  placeholder=" "
+                  oninput="formDeCadastro.AtualizaDados()"
+                />
+                <label for="birth_date" class="input-label">Data de Nascimento</label>
+              </div>
+
+              <div class="erros">
                     <?php 
                         if (isset($_SESSION['erros'])) {
                             $erros = $_SESSION['erros'];
@@ -37,48 +133,29 @@
                             }
                         }
                     ?>
-                </div>
-                    <div class="form_area">
-                        <div class="flex" style="width: 100%; gap: 5%;">
-                            <div class="div_input">
-                                <div>Nome de usuário:</div>
-                                <input type="text" name="usuario" id="usuario" placeholder="Fulano123" required oninput="formDeCadastro.AtualizaDados()" value="<?=$_SESSION['dados']['usuario'] ?? ''?>">
-                            </div>
-                            <div class="div_input">
-                                <div>Data de aniversário:</div>
-                                <input type="date" name="nascimento" id="nascimento" required value="<?=$_SESSION['dados']['nascimento']['total']?>" oninput="formDeCadastro.AtualizaDados()">
-                            </div>
-                        </div>
-                        <div class="div_input">
-                            <div>E-mail:</div>
-                            <input type="email" name="email" id="email" placeholder="exemplo@gmail.com" required oninput="formDeCadastro.AtualizaDados()" value="<?=$_SESSION['dados']['email'] ?? ''?>">
-                        </div>
-                        <div class="div_input">
-                            <div>Nova senha:</div>
-                            <input type="password" name="senha" id="senha" placeholder="batataarrozpeixe123" required oninput="formDeCadastro.AtualizaDados()" minlength="6" value="<?=$_SESSION['dados']['senha'] ?? ''?>">
-                        </div>
-                        <div class="div_input">
-                            <div>Confirme a nova senha:</div>
-                            <input type="password" name="confirmaSenha" id="confirmaSenha" placeholder="batataarrozpeixe123" required oninput="formDeCadastro.AtualizaDados()" minlength="6" value="<?=$_SESSION['dados']['senha'] ?? ''?>">
-                        </div>
-                    
-                    
-                        <div class="finalizar">
-                            <div>
-                                <input type="submit" value="Cadastrar" id="submit" disabled>
-                                <input type="reset" value="Resetar">
-                            </div>
-                            <div class="container_voltar">
-                                <input type="button" value="Voltar" onclick="Voltar()"></input>
-                            </div>
-                        </div>
-                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="check-element">
+            <input type="checkbox" name="reg-check" id="reg_check" oninput="formDeCadastro.AtualizaDados()"/>
+            <label for="reg_check"
+              >Esta conta só pode ser usada neste dispositivo.</label
+            >
+          </div>
 
-            </form>
-        </div>
-    </main>
+          <input type="submit" id="signup_submit" class="btn" value="Cadastrar-se" disabled></input>
+        </form>
+      </section>
 
-    <!-- JavasScript -->
-    <script src="./scripts/registro.js"></script>
-</body>
+
+    <!-- Script JavaScript bem bacana -->
+    <script src="./js/registro.js"></script>
+    <script src="./js/script-registro.js"></script>
+
+    <?php 
+      $_SESSION['erros'] = null; // Limpa os erros após exibi-los
+      $_SESSION['logado'] = null; // Limpa a variável de logado após redirecionar
+    ?>
+  </body>
 </html>

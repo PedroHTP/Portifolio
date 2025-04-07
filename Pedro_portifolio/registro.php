@@ -111,6 +111,7 @@ if (isset($_SESSION['logado'])) {
                 <input
                   type="date"
                   name="nascimento"
+                  value="<?=date('Y-m-d')?>"
                   min="1900-01-01"
                   max="<?=date('Y-m-d')?>"
                   id="birth_date"

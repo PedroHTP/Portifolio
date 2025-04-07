@@ -55,15 +55,16 @@
                     $_SESSION['erros'] = $erros;
                     $_SESSION['logado'] = false;
 
-                    echo "<script>alert('erros');</script>";
-                    echo "<script>window.history.back();</script>";
+                    
+                    header('Location: registro.php'); // Redireciona de volta ao formulário
+                    exit;
                 } else {
                     $_SESSION['logado'] = true;
-                    echo "<script>alert('true');</script>";
+                    
                     $_SESSION['dados'] = array('usuario'=>$nomeUsuario, 'email'=>$email, 'senha'=>$senha, 'idade'=>$idade, 'nascimento'=>array('total' => $aniversario->format('Y-m-d'), 'ano'=>$aniversario->format('Y'), 'mes'=>$aniversario->format('m'), 'dia'=>$aniversario->format('d')));
+                    header('Location: index.php'); // Redireciona para a página principal
+                    exit;
                 }
-                echo "<script>alert(".$_SESSION['dados']['usuario'].");</script>";
-
                 
     }
 ?>
