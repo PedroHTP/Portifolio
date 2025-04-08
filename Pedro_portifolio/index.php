@@ -239,7 +239,7 @@
           <div class="card-body text-center">
             <h4 class="card-title">Game Development</h4>
             <span class="badge bg-secondary badge-pill">HTML&CSS</span>
-            <span class="badge bg-secondary badge-pill">C++</span>
+            <span class="badge bg-secondary badge-pill">C#</span>
             <span class="badge bg-secondary badge-pill mb-2">Game</span
             ><br />
             <a href="#" class="link">Leia Mais</a>

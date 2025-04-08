@@ -75,15 +75,15 @@
                 <div class="dados_usuario">
                     
                         <div class="div_input">
-                            <div>Nome de usuário: <?=$_SESSION['dados']['usuario'] ?? 0?></div>
+                            <div class="title_dados">Nome de usuário: <?=$_SESSION['dados']['usuario'] ?? 0?></div>
                         </div>
                         <div class="div_input">
-                            <div>Idade: <?=$_SESSION['dados']['idade']?></div>
-                            <div>Data de aniversário: <?=$_SESSION['dados']['nascimento']['dia']." de ".$mes." de ".$_SESSION['dados']['nascimento']['ano']?></div>
+                            <div class="title_dados">Idade: <?=$_SESSION['dados']['idade']?></div>
+                            <div class="title_dados">Data de aniversário: <?=$_SESSION['dados']['nascimento']['dia']." de ".$mes." de ".$_SESSION['dados']['nascimento']['ano']?></div>
                         </div>
                     
                     <div class="div_input">
-                        <div>E-mail: <?=$_SESSION['dados']['email']?></div>
+                        <div class="title_dados">E-mail: <?=$_SESSION['dados']['email']?></div>
                     </div>
                 </div>
             </div>
